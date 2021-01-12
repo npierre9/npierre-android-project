@@ -5,9 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.faircorp.OnWindowSelectedListener
 import com.example.faircorp.R
 
-class WindowAdapter : RecyclerView.Adapter<WindowAdapter.WindowViewHolder>() { // (1)
+class WindowAdapter(val listener: OnWindowSelectedListener) : RecyclerView.Adapter<WindowAdapter.WindowViewHolder>() { // (1)
 
     inner class WindowViewHolder(view: View) : RecyclerView.ViewHolder(view) { // (2)
         val name: TextView = view.findViewById(R.id.txt_window_name)
@@ -37,6 +38,13 @@ class WindowAdapter : RecyclerView.Adapter<WindowAdapter.WindowViewHolder>() { /
             name.text = window.name
             status.text = window.status.toString()
             room.text = window.room.name
+            itemView.setOnClickListener { listener.onWindowSelected(window.id) }
+        }
+    }
+    override fun onViewRecycled(holder: WindowViewHolder) { // (2)
+        super.onViewRecycled(holder)
+        holder.apply {
+            itemView.setOnClickListener(null)
         }
     }
 }
