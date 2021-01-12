@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Faircorp</string>
+    <string name="window_name">Window name</string>
+    <string name="welcome_on_faircorp_n_the_app_to_manage_building_windows">Welcome on faircorp\n the app to manage building windows</string>
+    <string name="name">Name</string>
+    <string name="open_window">Open window</string>
+    <string name="button">Button</string>
+    <string name="todo">TODO</string>
+    <string name="app_logo_description">Faircorp logo</string>
+
+    <string name="act_main_windowname_hint">Ligth name</string>
+    <string name="act_main_welcome">Welcome on faircorp,\n the app to manage building windows</string>
+    <string name="act_main_open_window">Open window</string>
+    <string name="empty">empty</string>
+</resources>
